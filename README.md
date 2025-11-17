@@ -1,275 +1,93 @@
-# Above and Beyond - IoT Web Applications Collection
+# Above and Beyond – IoT Experience Pack
 
-A collection of web-based projects demonstrating various IoT concepts, control interfaces, and data visualization techniques. This repository contains multiple mini-projects showcasing different aspects of Internet of Things applications and web development skills.
+A curated bundle of small web applications, UI prototypes, and research notes that showcase how Internet of Things ideas can be
+presented to non-technical audiences, controlled from a browser, and visualised with live-looking charts. Each sub-project can
+be opened directly in the browser, making the repository a handy toolkit for demos, coursework submissions, or inspiration
+when discussing IoT with stakeholders.
 
-## 🎯 Overview
+---
 
-This repository contains a series of web applications developed to demonstrate understanding of IoT applications, smart building concepts, and control interfaces. The projects range from informational websites about IoT to interactive control panels and data visualization dashboards.
+## Repository Map
 
-**Primary Purpose:** Educational demonstration of web development skills and IoT concept understanding for the SIT209 unit.
+| Folder | Description |
+| --- | --- |
+| `Above and Beyond 1/` | Multi-page informational site covering IoT basics, applications, and required skillsets. |
+| `Above and Beyond 2/` | Smart-lighting controller prototype with colour pickers and custom toggle switches. |
+| `Above and Beyond 3/` | Login-gated smart-car dashboard mock-up that routes two demo users to personalised pages. |
+| `Above and Beyond 4/` | Supporting research paper: “Incidences of Security Failures in IoT” (`.docx`). |
+| `Above and Beyond 5/` | Highcharts-based dashboard that plots monthly temperatures for four global cities. |
 
-## 📦 Projects Included
+Static assets (images, CSS, JS) live beside their respective HTML entry points to keep each mini-project self-contained.
 
-### 1. **IoT Information Portal** (`Above and Beyond 1/`)
-An informative website explaining IoT concepts, applications, and required skillsets. Features multiple pages with responsive navigation and educational content.
+---
 
-### 2. **Smart Lighting Control App** (`Above and Beyond 2/`)
-An interactive web interface for controlling smart lighting systems with color selection and on/off switching capabilities.
+## Project Highlights
 
-### 3. **Temperature Data Visualization** (`Above and Beyond 5/`)
-A data visualization dashboard displaying temperature trends across multiple cities using interactive charts.
+### 1. IoT Information Portal (`Above and Beyond 1/`)
+* **Pages:** `index.html`, `Activity.html`, `author.html` backed by a shared `main.css` stylesheet.
+* **Navigation:** Fixed Bootstrap navbar plus a vertical sidenav for in-page jumping between “Applications” and “Skills”.【F:Above and Beyond 1/index.html†L15-L46】
+* **Content:** Curated copy that explains IoT domains (smart homes, healthcare, industrial, agriculture, cities, retail, transport)
+and the skills required to build them, complete with royalty-free images sourced from RFPage, Verzeo, etc.【F:Above and Beyond 1/index.html†L48-L109】【F:Above and Beyond 1/index.html†L114-L166】
+* **Call-to-action:** Prominent hero banner with an author link, making it suitable for presentation portfolios.【F:Above and Beyond 1/index.html†L32-L40】
 
-## ✨ Features
+### 2. Smart Lighting Control App (`Above and Beyond 2/`)
+* **UI:** Three independent “Light” cards rendered inside `main.html`, each containing an HTML5 colour picker and a custom toggle switch component styled in `style.css`.【F:Above and Beyond 2/main.html†L9-L47】【F:Above and Beyond 2/style.css†L1-L59】
+* **Interaction hook:** `java.js` attaches a `change` handler to every colour picker, ready for future integration with real IoT endpoints (background updates are stubbed out so the UI can be themed without affecting layout).【F:Above and Beyond 2/java.js†L1-L11】
+* **Styling:** Rounded sliders, smooth transitions, and a centred container keep the prototype device-agnostic and presentation ready.【F:Above and Beyond 2/style.css†L23-L70】
 
-### Common Features Across Projects
-- 📱 **Responsive Design**: Bootstrap-based layouts that work on various screen sizes
-- 🎨 **Modern UI**: Clean, professional interfaces with intuitive navigation
-- 🔄 **Interactive Elements**: Dynamic components using JavaScript/jQuery
-- 📊 **Visual Appeal**: Well-structured content with images and styling
+### 3. Smart Car Dashboard (`Above and Beyond 3/`)
+* **Login Gate:** `index.html` hosts a minimalist login form that calls `loginUser()` on submit.【F:Above and Beyond 3/index.html†L1-L19】
+* **Credential Routing:** `server.js` performs client-side checks and routes `dipanshgarg` to `user1.html` (Tesla Model 3 dashboard) and `architgarg` to `user2.html` (Mercedes-Benz EQS); incorrect entries trigger an alert.【F:Above and Beyond 3/server.js†L1-L23】
+* **Dashboards:** Both user pages share `style.css`, displaying hero imagery, live-data placeholders (mileage, fuel, battery, maintenance), and CTA buttons for lock/unlock/start/stop actions.【F:Above and Beyond 3/user1.html†L1-L34】【F:Above and Beyond 3/user2.html†L1-L34】【F:Above and Beyond 3/style.css†L1-L74】
 
-### Project-Specific Features
+### 4. Research Companion (`Above and Beyond 4/`)
+* Contains `Incidences of security failures in IoT.docx`, a narrative report suitable for referencing in presentations or academic submissions. (Open the document locally in Microsoft Word or LibreOffice Writer.)
 
-**IoT Information Portal:**
-- Multi-page navigation with fixed navbar
-- Side navigation for quick page jumping
-- Comprehensive content about IoT applications
-- Contact form for visitor engagement
-- Author biography section
+### 5. Temperature Analytics Dashboard (`Above and Beyond 5/`)
+* **Chart Container:** `index.html` loads jQuery 2.1.3 and Highcharts, mounting a full-width chart holder with `id="container"`.【F:Above and Beyond 5/index.html†L1-L13】
+* **Visualization Logic:** `server.js` defines titles, axes, tooltips, legends, and four city series (Tokyo, New York, Berlin, London) before instantiating the chart via `$('#container').highcharts(json);`.【F:Above and Beyond 5/server.js†L1-L48】
+* **Artifacts:** Supporting report files `a&b5.docx` and `a&b5.pdf` document the problem statement and findings for the dashboard.
 
-**Smart Lighting App:**
-- Toggle switches for light control
-- Color picker for RGB color selection
-- Multiple light management (3 lights)
-- Real-time interface updates
-- Sleek toggle switch design
+---
 
-**Temperature Dashboard:**
-- Interactive line charts using Highcharts
-- Multi-city temperature comparison
-- Monthly average data visualization
-- Responsive chart sizing
-- Professional data presentation
-
-## 🛠️ Technologies Used
-
-### Frontend
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Custom styling and animations
-- **Bootstrap 5.3**: Responsive grid system and components
-- **JavaScript**: Client-side interactivity
-- **jQuery 3.6**: DOM manipulation and event handling
-
-### Libraries & Frameworks
-- **Bootstrap** (`v5.3.0-alpha1`): UI framework
-- **jQuery** (`v3.6.0`, `v2.1.3`): JavaScript library
-- **Highcharts**: Data visualization library
-- **Font Awesome**: Icon library (referenced in navbar)
-
-### Development Tools
-- **VS Code**: Code editor (settings included)
-- Git version control
-
-## 🚀 Installation & Setup
+## Getting Started
 
 ### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Text editor or IDE (VS Code recommended)
-- Local web server (optional, for testing)
+* Any modern browser (Chrome, Edge, Firefox, Safari).
+* Optional: lightweight HTTP server (Python, `http-server`, etc.) if you prefer not to open files directly from disk.
 
-### Basic Setup
-
-1. **Clone the Repository:**
+### Run a Project
+1. Clone the repository and change into the root folder:
    ```bash
-   git clone <repository-url>
-   cd Above-and-Beyond
+   git clone <repo-url>
+   cd AboveandBeyond
    ```
-
-2. **No Build Process Required:**
-   These are static HTML/CSS/JS projects that run directly in the browser.
-
-3. **Open Projects:**
-   
-   **Option A: Direct File Opening**
-   - Navigate to any project folder
-   - Double-click the HTML file to open in your default browser
-
-   **Option B: Local Server (Recommended)**
+2. Pick a project folder.
+3. Either double-click the HTML file (quick preview) or serve the folder:
    ```bash
-   # Using Python 3
+   # Example: serve Above and Beyond 2 on http://localhost:8000
+   cd "Above and Beyond 2"
    python -m http.server 8000
-   
-   # Using Python 2
-   python -m SimpleHTTPServer 8000
-   
-   # Using Node.js http-server
-   npx http-server
    ```
-   Then navigate to `http://localhost:8000`
+4. Open the listed URL in your browser. Internet access is required for CDN-hosted Bootstrap, jQuery, Highcharts, and font assets.
 
-### CDN Dependencies
-
-All external libraries are loaded via CDN, so an internet connection is required for full functionality:
-- Bootstrap CSS/JS
-- jQuery
-- Highcharts
-- Google Ajax APIs
-
-## 📁 File Structure
-
-```
-Above-and-Beyond/
-├── Above and Beyond 1/          # IoT Information Portal
-│   ├── .vscode/
-│   │   └── settings.json       # VS Code configuration
-│   ├── index.html              # Home page
-│   ├── Activity.html           # Activities/concepts page
-│   ├── author.html             # About the author page
-│   └── main.css                # Main stylesheet
-│
-├── Above and Beyond 2/          # Smart Lighting Control App
-│   ├── main.html               # Main interface
-│   ├── style.css               # Styling for lighting controls
-│   └── java.js                 # Color picker functionality
-│
-└── Above and Beyond 5/          # Temperature Visualization
-    ├── index.html              # Dashboard page
-    └── server.js               # Chart configuration and data
-```
-
-## 📖 Project Details
-
-### Above and Beyond 1: IoT Information Portal
-
-**Purpose:** Educational website explaining IoT concepts, applications, and technologies.
-
-**Pages:**
-1. **Home (`index.html`)**: Introduction to IoT with visual examples
-2. **Activities (`Activity.html`)**: Three detailed activities covering:
-   - IoT Applications overview
-   - Smart Building concepts
-   - Control Interface explanations
-3. **About (`author.html`)**: Author biography and contact form
-
-**Navigation Features:**
-- Fixed top navigation bar across all pages
-- Side navigation for in-page section jumping
-- Smooth scrolling and hover effects
-
-**Content Highlights:**
-- IoT application examples (Smart Homes, Healthcare, Industrial IoT, etc.)
-- Required skillsets (Programming, Embedded Systems, Networking, etc.)
-- Real-world usage scenarios
-- Visual aids and images
-
-### Above and Beyond 2: Smart Lighting Control App
-
-**Purpose:** Demonstrate an IoT control interface for smart lighting systems.
-
-**Features:**
-- **Three Independent Light Controls**: Each with its own color and power state
-- **Color Selection**: HTML5 color picker for RGB color choice
-- **Toggle Switches**: Smooth animated switches for on/off control
-- **Visual Feedback**: Blue active state, gray inactive state
-
-**Components:**
-```html
-Each Light Unit Contains:
-├── Header (Light 1/2/3)
-├── Color Picker Input
-└── Toggle Switch
-```
-
-**Interaction Flow:**
-1. User selects a color using the color picker
-2. User toggles the switch on/off
-3. jQuery captures the change events
-4. (Ready for backend integration to control actual devices)
-
-**Styling:**
-- Clean, card-based layout
-- Professional toggle switch design
-- Responsive container (max-width: 800px)
-- Consistent spacing and borders
-
-### Above and Beyond 5: Temperature Data Visualization
-
-**Purpose:** Display multi-city temperature data using interactive charts.
-
-**Data Visualization:**
-- **Chart Type**: Line chart with multiple series
-- **Cities Tracked**: Tokyo, New York, Berlin, London
-- **Time Period**: Monthly averages (Jan-Dec)
-- **Temperature Range**: Displayed in Celsius
-
-**Chart Features:**
-- Interactive tooltips showing exact values
-- Legend for series identification
-- Grid lines for easy reading
-- Responsive sizing (100% width)
-- Professional color scheme
-
-**Data Structure:**
-```javascript
-Series: [
-  Tokyo: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
-  New York: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5],
-  Berlin: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0],
-  London: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-]
-```
-
-## 🎮 Usage Guide
-
-### Navigating the IoT Information Portal
-
-1. **Start at Home Page**: Learn about IoT basics and applications
-2. **Explore Activities**: Click "Activities" in the navbar to learn concepts
-3. **Use Side Navigation**: Jump to specific sections using the left sidebar
-4. **Contact the Author**: Visit "About us" page to see profile and send messages
-
-### Using the Smart Lighting App
-
-1. **Open `main.html`** in your browser
-2. **Select a Color**:
-   - Click the color picker for any light
-   - Choose your desired color from the palette
-3. **Toggle Lights**:
-   - Click the switch to turn lights on/off
-   - Blue = On, Gray = Off
-4. **Manage Multiple Lights**: Each light operates independently
-
-### Viewing Temperature Data
-
-1. **Open `index.html`** from the Above and Beyond 5 folder
-2. **Interact with Chart**:
-   - Hover over data points to see exact temperatures
-   - Click legend items to show/hide city data
-   - Zoom and pan (if enabled in Highcharts configuration)
-
-## 🌐 Browser Compatibility
-
-### Tested Browsers
-- ✅ Google Chrome (90+)
-- ✅ Mozilla Firefox (88+)
-- ✅ Safari (14+)
-- ✅ Microsoft Edge (90+)
-
-### Requirements
-- JavaScript enabled
-- CSS3 support
-- HTML5 support
-- Internet connection (for CDN resources)
-
-## 🙏 Acknowledgments
-
-- **Bootstrap Team**: For the excellent responsive framework
-- **jQuery Foundation**: For simplifying JavaScript operations
-- **Highcharts**: For powerful data visualization capabilities
-- **Chitkara University**: For providing the learning opportunity
-- **SIT209 Course**: For the project requirements and guidance
-- **Online Communities**: Stack Overflow, MDN Web Docs, and W3Schools for reference materials
+Because each project is static, there is no build step and no package installation. If you want to wire the interfaces to real
+hardware or cloud services, swap the stub JavaScript with API calls suited to your IoT platform of choice.
 
 ---
 
-**Note:** These projects are demonstration prototypes for educational purposes. They showcase frontend skills and IoT concepts but require backend integration for production use with actual IoT devices.
+## Extending the Projects
+* **IoT Portal:** Replace the placeholder images or add new sections in `Activity.html` to tailor the narrative to your audience.
+* **Smart Lighting:** Connect the colour picker and toggle events in `java.js` to MQTT, WebSocket, or REST endpoints to drive
+actual hardware.
+* **Smart Car Dashboard:** Use the login guard as a template for role-based dashboards, and populate the data cards with live
+telemetry from your vehicles or test rigs.
+* **Temperature Dashboard:** Swap the hard-coded `series` arrays in `server.js` for dynamic data (CSV fetch, API call, etc.) and
+experiment with other Highcharts modules such as exporting or range selectors.
+
 ---
+
+## Contributing & License
+This repository is primarily an academic showcase. Feel free to fork it for your own experiments, extend the dashboards, or turn
+it into a teaching aid. When contributing, keep each mini-project self-contained so future students can drop folders into their
+own coursework with minimal changes.
