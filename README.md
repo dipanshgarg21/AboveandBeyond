@@ -88,6 +88,4 @@ experiment with other Highcharts modules such as exporting or range selectors.
 ---
 
 ## Contributing & License
-This repository is primarily an academic showcase. Feel free to fork it for your own experiments, extend the dashboards, or turn
-it into a teaching aid. When contributing, keep each mini-project self-contained so future students can drop folders into their
-own coursework with minimal changes.
+This repository is primarily an academic showcase.
