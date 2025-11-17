@@ -1,4 +1,4 @@
-# Above and Beyond – IoT Experience Pack
+# Above and Beyond – IoT
 
 A curated bundle of small web applications, UI prototypes, and research notes that showcase how Internet of Things ideas can be
 presented to non-technical audiences, controlled from a browser, and visualised with live-looking charts. Each sub-project can
